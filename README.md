@@ -140,6 +140,9 @@ cmake ..
 cmake --build . [--config <RELEASE|DEBUG>] -- /m:<N>
 ```
 
+## Crosscompilation
+cmake -DCMAKE_PREFIX_PATH="/usr/armv7a-hardfloat-linux-gnueabi/opt/qt5:/home/semlanik/Projects/qtprotobuf/build-arm/build-host" -DCMAKE_TOOLCHAIN_FILE=../toolchain -DQT_PROTOBUF_MAKE_TESTS=OFF -DQT_PROTOBUF_MAKE_EXAMPLES=OFF ../
+
 # Usage
 ## Direct usage of generator
 
