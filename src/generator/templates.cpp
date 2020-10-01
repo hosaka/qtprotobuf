@@ -183,6 +183,9 @@ const char *Templates::NonScriptableGetterTemplate = "$qml_alias_type$ $property
 const char *Templates::GetterContainerExtraTemplate = "$getter_type$ &$property_name$() {\n"
                                         "    return m_$property_name$;\n"
                                         "}\n\n";
+const char *Templates::GetterContainerExtraRawTemplate = "Q_INVOKABLE $namespaces$::$type$* $property_name$At(int index) {\n"
+                                                      "    return m_$property_name$.at(index).get();\n"
+                                                      "}\n\n";
 
 const char *Templates::GetterQmlListDeclarationTemplate = "QQmlListProperty<$scope_type$> $property_name$_l();\n";
 const char *Templates::GetterQmlListDefinitionTemplate = "QQmlListProperty<$full_type$> $classname$::$property_name$_l()\n{\n"

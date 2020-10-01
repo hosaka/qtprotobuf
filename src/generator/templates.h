@@ -133,6 +133,7 @@ public:
     static const char *GetterTemplate;
     static const char *NonScriptableGetterTemplate;
     static const char *GetterContainerExtraTemplate;
+    static const char *GetterContainerExtraRawTemplate;
     static const char *GetterQmlListDeclarationTemplate;
     static const char *GetterQmlListDefinitionTemplate;
 

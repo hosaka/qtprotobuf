@@ -31,7 +31,6 @@
 #include <QGrpcUserPasswordCredentials>
 #include <QGrpcSslCredentials>
 
-#include <QDebug>
 #include <QFile>
 #include <QSslConfiguration>
 #include <QCryptographicHash>

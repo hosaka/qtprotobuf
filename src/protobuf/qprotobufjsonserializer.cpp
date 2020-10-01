@@ -319,7 +319,7 @@ public:
             while (it != last) {
                 ok = true;
                 handler.deserializer(qPtr, it, newValue);
-                qDebug() << "newValue" << newValue;
+                qProtoDebug() << "newValue" << newValue;
             }
         } else {
             auto handler = handlers.find(type);
@@ -410,7 +410,7 @@ QByteArray QProtobufJsonSerializer::serializeListEnd(QByteArray &buffer, const Q
 bool QProtobufJsonSerializer::deserializeListObject(QObject *object, const QProtobufMetaObject &metaObject, QProtobufSelfcheckIterator &it) const
 {
     if (*it == '[') {
-        qDebug() << "Begin of list";
+        qProtoDebug() << "Begin of list";
         ++it;
     }
 
@@ -446,7 +446,7 @@ QByteArray QProtobufJsonSerializer::serializeMapEnd(QByteArray &buffer, const QP
 bool QProtobufJsonSerializer::deserializeMapPair(QVariant &key, QVariant &value, QProtobufSelfcheckIterator &it) const
 {
     if (*it == '{') {
-        qDebug() << "Begin of map";
+        qProtoDebug() << "Begin of map";
         ++it;
     }
 

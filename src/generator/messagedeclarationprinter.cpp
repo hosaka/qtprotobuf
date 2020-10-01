@@ -261,9 +261,11 @@ void MessageDeclarationPrinter::printGetters()
 
         if (field->is_repeated()) {
             mPrinter->Print(propertyMap, Templates::GetterContainerExtraTemplate);
-            if (field->type() == FieldDescriptor::TYPE_MESSAGE && !field->is_map()
-                    && GeneratorOptions::instance().hasQml()) {
-                mPrinter->Print(propertyMap, Templates::GetterQmlListDeclarationTemplate);
+            if (field->type() == FieldDescriptor::TYPE_MESSAGE && !field->is_map()) {
+                mPrinter->Print(propertyMap, Templates::GetterContainerExtraRawTemplate);
+                if (GeneratorOptions::instance().hasQml()) {
+                  mPrinter->Print(propertyMap, Templates::GetterQmlListDeclarationTemplate);
+                }
             }
         }
     });
